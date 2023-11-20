@@ -22,22 +22,27 @@
 
   <!-- Add a rectangle to carry these values -->
   <div class="textbox" id="rcorners1">
-  <label for="Day"> Day: </label>
-  <input type="number" id="day" name="Day" min="1" max="31">
+  <label> Day:
+    <input type="text" id="myDay" name="Day">
+  </label>
 
-  <label for="Month"> Month: </label>
-  <input type="number" id="month" name="Month" min="1" max="12">
+  <label> Month:
+    <input type="text" id="myMonth" name="Month">
+  </label>
 
-  <label for="Year"> Year: </label>
-  <input type="number" id="year" name="Year" min="1" max="2023">
+  <label> Year:
+    <input type="text" id="myYear" name="Year">
+  </label>
 
-  <button type="button" class="btn btn-primary"> Calculate </button>
+  <button type="button" class="btn btn-primary" onclick="ageValue()"> Calculate </button>
 
   <!-- Calculate the age using the values given in the top by user input -->
   <!-- Age == Current Y / M / D - Input -->
-  -- years
-  -- months
-  -- days
+  <p class="big"></p>
+  <p id="nYear"> -- years</p>
+  <p id="nMonth"> -- months</p>
+  <p id="nDays"> -- days</p>
+  </p>
   </div>
 
   

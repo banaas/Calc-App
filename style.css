@@ -1,9 +1,14 @@
+p.big {
+  line-height: 100px;
+}
+
 #rcorners1 {
     border-radius: 25px;
+    box-shadow: 10px 10px 5px lightblue;
     background: #00d9ff;
     padding: 20px;
-    width: 400px;
-    height: 300px;
+    width: 900px;
+    height: 600px;
     position: absolute;
     top: 50%;
     left: 50%;
