@@ -30,9 +30,20 @@ function ageValue () {
         var newMonth = currentMonth - inputMonth;
         var newDay = currentDay - inputDay;
 
-    /*    if (newMonth <= 0) {
+        // If the calculated month is negative or zero, remove one year and increment the amount of months / days
 
-        } */
+        if (newMonth <= -1) {
+            newYear = (currentYear - inputYear) - 1;
+            newMonth = 1 + (currentMonth - inputMonth);
+        }
+
+        // If the calculated day is negative or zero, remove one month and increment the amount of days
+
+        if (newMonth > 1 || newDay <= 0) {
+            newMonth = (currentMonth - inputMonth) - 1;
+            newDay = (currentDay - inputDay) + 31;
+        }
+
         document.getElementById("nYear").innerHTML = newYear + " years";
         document.getElementById("nMonth").innerHTML = newMonth + " months";
         document.getElementById("nDays").innerHTML = newDay + " days";
