@@ -7,6 +7,7 @@ const shortMonths = [4, 6, 9, 11];
 var currentYear = date.getFullYear();
 var currentDay = date.getDate();
 
+
 // Calculate and display the age
 
 function ageValue () {
@@ -49,4 +50,5 @@ function ageValue () {
         document.getElementById("nDays").innerHTML = newDay + " days";
     }
 }
+
 
