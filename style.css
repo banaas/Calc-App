@@ -2,6 +2,15 @@ p.big {
   line-height: 100px;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.big {
+  font-weight: bold;
+}
+
 #rcorners1 {
     border-radius: 25px;
     box-shadow: 10px 10px 5px lightblue;
