@@ -1,3 +1,3 @@
 # Age Calculator App
 
-This webpage calculates the age of an individual through a mix of HTML and JavaScript. 
+This webpage calculates the age of an individual through a mix of HTML and JavaScript. It's still currently a work-in-progress.
