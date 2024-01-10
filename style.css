@@ -8,17 +8,23 @@ body {
   font-weight: 400;
 }
 
+.label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
 .big {
   font-weight: bold;
   font-size: 80px;
 }
 
 .date-border {
-  border
+  border-bottom: 1px solid #888;
 }
 
 .date-val {
   color: blueviolet;
+  display: inline-block;
 }
 
 #rcorners1 {
