@@ -48,9 +48,13 @@ function ageValue () {
             newDay = (currentDay - inputDay) + 31;
         }
 
-        document.getElementById("nYear").innerHTML = newYear + " years";
-        document.getElementById("nMonth").innerHTML = newMonth + " months";
-        document.getElementById("nDays").innerHTML = newDay + " days";
+        document.getElementById("nYear").remove();
+        document.getElementById("nMonth").remove();
+        document.getElementById("nDays").remove();
+
+        document.getElementById("nYear").innerHTML = newYear;
+        document.getElementById("nMonth").innerHTML = newMonth;
+        document.getElementById("nDays").innerHTML = newDay;
     }
 }
 
