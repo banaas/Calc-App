@@ -39,7 +39,7 @@ function ageValue () {
         if (newMonth <= -1) {
             newYear = (currentYear - inputYear) - 1;
             newMonth = 1 + (currentMonth - inputMonth);
-        }
+        } 
 
         // If the calculated day is negative or zero, remove one month and increment the amount of days
 
