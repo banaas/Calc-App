@@ -27,8 +27,10 @@ function ageValue () {
     } else if (inputYear >= currentYear && inputMonth > currentMonth) {
         alert("You must enter a date that currently isn't in the future.");
     } else if ((inputMonth == 4 || inputMonth == 6 || inputMonth == 9 || 
-            inputMonth == 11) && inputDay >= 31) {
-            alert("You must enter a valid date (day must be between 1 and 30).");
+        inputMonth == 11) && inputDay >= 31) {
+        alert("You must enter a valid date (day must be between 1 and 30).");
+    } else if ((inputMonth == 2) && (inputDay >= 29)) {
+        alert("You must enter a valid date (day must be between 1 and 28).");
     } else {
         var newYear = currentYear - inputYear;
         var newMonth = currentMonth - inputMonth;
@@ -43,18 +45,23 @@ function ageValue () {
 
         // If the calculated day is negative or zero, remove one month and increment the amount of days
 
-        if (newMonth > 1 || newDay <= 0) {
-            newMonth = (currentMonth - inputMonth) - 1;
+        if (newDay <= 0) {
             newDay = (currentDay - inputDay) + 31;
         }
+        
+        if (currentMonth <= inputMonth) {
+            newMonth = currentMonth;
+        } else {
+            newMonth = 12 - currentMonth;
+        }
 
-        document.getElementById("nYear").remove();
-        document.getElementById("nMonth").remove();
-        document.getElementById("nDays").remove();
+        //document.getElementById("nYear").remove();
+        //document.getElementById("nMonth").remove();
+        //document.getElementById("nDays").remove();
 
-        document.getElementById("nYear").innerHTML = newYear;
-        document.getElementById("nMonth").innerHTML = newMonth;
-        document.getElementById("nDays").innerHTML = newDay;
+        document.getElementById("nYear").innerHTML = newYear + " years";
+        document.getElementById("nMonth").innerHTML = newMonth + " months";
+        document.getElementById("nDays").innerHTML = newDay + " days";
     }
 }
 
