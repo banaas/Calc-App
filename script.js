@@ -18,6 +18,7 @@ function ageValue () {
     var inputMonth = document.getElementById("myMonth").value;
     var inputDay = document.getElementById("myDay").value;
 
+    // Initiate errors for invalid dates
     if (inputYear <= 0 || inputYear > currentYear) {
         alert("You must enter a valid year.");
     } else if (inputMonth < 1 || inputMonth >= 13) {
@@ -29,9 +30,17 @@ function ageValue () {
     } else if ((inputMonth == 4 || inputMonth == 6 || inputMonth == 9 || 
         inputMonth == 11) && inputDay >= 31) {
         alert("You must enter a valid date (day must be between 1 and 30).");
-    } else if ((inputMonth == 2) && (inputDay >= 29)) {
+    }
+    
+    // If the month is February
+    else if ((inputMonth == 2) && (inputYear % 4 != 0) && (inputDay >= 29)) {
         alert("You must enter a valid date (day must be between 1 and 28).");
-    } else {
+    } else if ((inputMonth == 2) && (inputYear % 4 != 0) && (inputDay >= 30)) {
+        alert("You must enter a valid date (day must be between 1 and 29).")
+    } 
+    
+    // Else statement for when the date is valid
+    else {
         var newYear = currentYear - inputYear;
         var newMonth = currentMonth - inputMonth;
         var newDay = currentDay - inputDay;
@@ -43,11 +52,13 @@ function ageValue () {
             newMonth = 1 + (currentMonth - inputMonth);
         } 
 
-        // If the calculated day is negative or zero, remove one month and increment the amount of days
+        // If the calculated day is negative or zero, add 31 days to the negative value
 
         if (newDay <= 0) {
             newDay = (currentDay - inputDay) + 31;
         }
+
+        // If the current month is less than input month, make it equal. Otherwise, subtract 12 months by the current month
         
         if (currentMonth <= inputMonth) {
             newMonth = currentMonth;
